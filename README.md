@@ -17,7 +17,7 @@ This project is a little PoC of usage IoT with Python, Snowflake and Kafka. It's
   `openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8`
   - Create public key:
   `openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub`
-  - Use `create_database.sql` script fron snowflake directory.
+  - Use `create_database.sql` script from snowflake directory and execute it on you snowflake instance.
   - In Snowflake, modify user (with accountadmin role):
   `ALTER USER kafka_connector SET RSA_PUBLIC_KEY='MIIBIjANBgkqh...';`
   - Modify the following keys in `/kafka-connect/config.js`:
