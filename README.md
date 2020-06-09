@@ -11,7 +11,7 @@ This project is a little PoC of usage IoT with Python, Snowflake and Kafka. It's
   - Docker [Install guide](https://docs.docker.com/get-docker/)
   - [Snowflake data warehouse](https://www.snowflake.com/)
 
-#. Setup and configuration
+# Setup and configuration
   - Download and unzip data with `./setup.sh`
   - Create private key:
   `openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8`
