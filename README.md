@@ -3,7 +3,7 @@
 This project download data from https://www.dati.lombardia.it/ about air pollution in Lombardia region.
 Script `setup.sh` download data and then python kafka producer `producer.py` reads line, converts to json and send
 data to python kafka consumer `consumer.py` and insert data via snowpipe to Snowflake table as a json.
-This project is a little PoC of usage IoT with Python, Snowflake and Kafka
+This project is a little PoC of usage IoT with Python, Snowflake and Kafka. It's a part of my postgraduate studies project on Poznan University in Technology about data warehouses. 
 
 
 
