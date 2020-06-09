@@ -1,7 +1,17 @@
-1. Prerequisites
+# Snowflake and Kafka
+
+This project download data from https://www.dati.lombardia.it/ about air pollution in Lombardia region.
+Script `setup.sh` download data and then python kafka producer `producer.py` reads line, converts to json and send
+data to python kafka consumer `consumer.py` and insert data via snowpipe to Snowflake table as a json.
+This project is a little PoC of usage IoT with Python, Snowflake and Kafka
+
+
+
+# Prerequisites
   - Docker [Install guide](https://docs.docker.com/get-docker/)
   - [Snowflake data warehouse](https://www.snowflake.com/)
-2. Setup and configuration
+
+#. Setup and configuration
   - Download and unzip data with `./setup.sh`
   - Create private key:
   `openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8`
@@ -13,5 +23,5 @@
       - "snowflake.url.name"
       - "snowflake.user.name"
       - "snowflake.private.key"
-3. Build and run entire stack: `docker-compose up --build`
-4. Shut down services gracefuly: `docker-compose rm -svf`
+  - Build and run entire stack: `docker-compose up --build`
+  - Shut down services gracefuly: `docker-compose rm -svf`
