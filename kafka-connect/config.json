@@ -1,0 +1,21 @@
+{
+  "name":"SnowflakeConnector",
+  "config":{
+    "connector.class":"com.snowflake.kafka.connector.SnowflakeSinkConnector",
+    "tasks.max":"8",
+    "topics":"queing_lombardia_surveys,streaming_lombardia_surveys",
+    "snowflake.topic2table.map":"streaming_lombardia_surveys:surveys,queing_lombardia_surveys:surveys_station",
+    "buffer.count.records":"10000",
+    "buffer.flush.time":"10",
+    "buffer.size.bytes":"50000000",
+    "snowflake.url.name":"--insert-here-url-name-without-www--:443",
+    "snowflake.user.name":"kafka_con",
+    "snowflake.private.key":"--insert-here-private-key--"
+    "snowflake.database.name":"LOMBARDIA",
+    "snowflake.schema.name":"STAGE",
+    "key.converter":"org.apache.kafka.connect.storage.StringConverter",
+    "value.converter":"com.snowflake.kafka.connector.records.SnowflakeJsonConverter",
+	"value.converter.schema.registry.url":"http://kafka:8081",
+	"value.converter.schemas.enable":"false"
+  }
+}
